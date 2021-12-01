@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-                        name: Login to DockerHub
-                        uses: docker/login-action@v1
-                        with:
-                                username: lgraup
-                                password: LGdrummer94
+    
+      - name: Login to Docker  
+        uses: docker/login-action@v1
+        with:
+          username: lgraup
+          password: LGdrummer94
 
-                        name: Build and Push
-                        id: docker_build
-                        uses: docker/build-push-action@v2
-                        with:
-                                push: true
-                                tags: lgraup/rhessys
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: lgraup/rhessys
 
