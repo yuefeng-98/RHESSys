@@ -1,8 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:18.04
 CMD ["/bin/bash"]
-WORKDIR /RHESSys/
-ADD RHESSys rhessys
+COPY ./rhessys /rhessys
+#WORKDIR /RHESSys/
+#ADD RHESSys rhessys
 #ADD RHESSysIOinR RHESSysIOinR
 RUN apt-get upgrade
 RUN apt-get update
