@@ -9,11 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build -t lgraup/rhessys .
-    - name: Login to Docker
-      run: docker login -u lgraup --p LGdrummer94
-    - name: Update repository
-      run: docker push lgraup/rhessys
+    
+      - name: Login to Docker  
+        uses: docker/login-action@v1
+        with:
+          username: lgraup
+          password: LGdrummer94
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: lgraup/rhessys
 
