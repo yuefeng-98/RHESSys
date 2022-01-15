@@ -9,10 +9,10 @@ jobs:
                 steps:
                       - name: Build Chain
                         id: build-chain
-                        uses: kiegroup/github-action-build-chain@v2.5
+                        uses: ginxo/github-action-build-chain@v2.1
                         with:
                                 definition-file: './definition_file.yml'
-                                flow-type: 'single'
+                                #flow-type: 'single'
                         env:
                                 GITHUB_TOKEN: "${{ secrets.LOGIN_TOKEN }}"
                         
