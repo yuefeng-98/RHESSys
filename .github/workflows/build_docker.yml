@@ -7,9 +7,9 @@ jobs:
         update_build:
                 runs-on: ubuntu-18.04
                 steps:
-                      - name: Build Chain ${{ matrix.java-version }}
+                      - name: Build Chain
                         id: build-chain
-                        uses: ginxo/github-action-build-chain@v2.5
+                        uses: kiegroup/github-action-build-chain@v2.5
                         with:
                                 definition-file: './definition_file.yml'
                                 flow-type: 'single'
