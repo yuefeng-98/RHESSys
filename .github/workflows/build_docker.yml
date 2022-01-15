@@ -10,7 +10,9 @@ jobs:
                       - name: Checkout RHESSysIOinR
                         uses: actions/checkout@v2
                         with:
-                                repository: RHESSys/RHESSysIOinR@master
+                                repository: RHESSys/RHESSysIOinR
+                                ref: master
+                                token: ${{ secrets.LOGIN_TOKEN }}
                         
                       - name: Login to DockerHub
                         uses: docker/login-action@v1
