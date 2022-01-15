@@ -7,14 +7,10 @@ jobs:
         update_build:
                 runs-on: ubuntu-18.04
                 steps:
-                      - name: Build Chain
-                        id: build-chain
-                        uses: ginxo/github-action-build-chain@v2.1
+                      - name: Checkout RHESSysIOinR
+                        uses: actions/checkout@v2
                         with:
-                                definition-file: './definition_file.yml'
-                                #flow-type: 'single'
-                        env:
-                                GITHUB_TOKEN: "${{ secrets.LOGIN_TOKEN }}"
+                                repository: RHESSys/RHESSysIOinR@master
                         
                       - name: Login to DockerHub
                         uses: docker/login-action@v1
