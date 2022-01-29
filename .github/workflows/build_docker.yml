@@ -19,3 +19,5 @@ jobs:
                         with:
                                 push: true
                                 tags: lgraup/rhessys
+                                cache-from: type=registry,ref=lgraup/rhessys:buildcache
+                                cache-to: type=registry,ref=lgraup/rhessys:buildcache,mode=max
